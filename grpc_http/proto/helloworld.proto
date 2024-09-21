@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package helloworld;
+
+// 为生成的 Go 文件指定包路径
+option go_package = "pb/";
+
+// 定义服务
+service Greeter {
+    // 定义 RPC 方法 SayHello，接受 HelloRequest，返回 HelloReply
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// 定义请求消息
+message HelloRequest {
+    string name = 1;
+}
+
+// 定义响应消息
+message HelloReply {
+    string message = 1;
+}
